@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login"; // Import the sign-in page
-import SignUp from "./components/SignUp"; // Import the sign-up page
+import SignUp from "./components/SignUp"; // Correct casing and path
 import LandingPage from "./components/LandingPage"; // Import the LandingPage
 import ProfilePage from "./components/ProfilePage"; // Import ProfilePage to show user profile after signup
 
