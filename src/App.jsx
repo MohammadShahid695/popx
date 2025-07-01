@@ -16,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Route for the Sign Up page */}
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/SignUp" element={<SignUp />} />
 
         {/* Route for the Profile Page (after user completes signup) */}
         <Route path="/profile" element={<ProfilePage />} />

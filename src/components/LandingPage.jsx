@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
     <div className="h-screen bg-white flex items-center justify-center px-4">
-      <div className="text-center text-black max-w-md w-full">
+      <div className="text-center text-black max-w-lg w-full">
         <h1 className="text-4xl sm:text-5xl font-semibold mb-6">
           Welcome to PopX
         </h1>
-        <p className="text-lg mb-8">
+        <p className="text-lg mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           varius enim in eros elementum tristique.
         </p>
