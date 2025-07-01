@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
 const SignUp = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
     email: "",
     password: "",
     companyName: "",
-    isAgency: false,
+    isAgency: "", // This will hold 'yes' or 'no'
   });
 
   // Update state on input change
@@ -22,7 +25,10 @@ const SignUp = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData); // You can process the signup here
+    console.log("Form submitted:", formData);
+
+    // Navigate to the Profile page with user data
+    navigate("/profile", { state: { user: formData } }); // Pass the user data via state
   };
 
   return (
@@ -129,19 +135,35 @@ const SignUp = () => {
             />
           </div>
 
-          {/* Are you an Agency Checkbox */}
-          <div className="mb-4 flex items-center">
-            <input
-              type="checkbox"
-              id="isAgency"
-              name="isAgency"
-              checked={formData.isAgency}
-              onChange={handleChange}
-              className="mr-2"
-            />
-            <label htmlFor="isAgency" className="text-lg text-black">
-              Are you an Agency?
-            </label>
+          {/* Are you an Agency - Yes/No Radio Buttons */}
+          <div className="mb-4">
+            <span className="text-lg text-black">Are you is an Agency?</span>
+            <div className="flex items-center mt-2">
+              <label className="mr-4">
+                <input
+                  type="radio"
+                  id="isAgencyYes"
+                  name="isAgency"
+                  value="yes"
+                  checked={formData.isAgency === "yes"}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  id="isAgencyNo"
+                  name="isAgency"
+                  value="no"
+                  checked={formData.isAgency === "no"}
+                  onChange={handleChange}
+                  className="mr-2"
+                />
+                No
+              </label>
+            </div>
           </div>
 
           {/* Submit Button */}
