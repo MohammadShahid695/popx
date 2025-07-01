@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Signup = () => {
+const SignUp = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -167,4 +167,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
